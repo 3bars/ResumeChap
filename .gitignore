@@ -1,12 +1,24 @@
 # Dependencies
 node_modules/
-package-lock.json
 yarn.lock
+
+# Python virtual env (created by the launcher)
+.venv/
+__pycache__/
+*.pyc
 
 # Build output
 dist/
 build/
 *.zip
+
+# Ship the pre-built frontend so end users only need Python to run the app.
+!app/frontend/dist/
+!app/frontend/dist/**
+
+# Local runtime data (SQLite DB, AI settings with API keys) — never commit.
+*.db
+ai_settings.json
 
 # Environment / secrets
 .env
